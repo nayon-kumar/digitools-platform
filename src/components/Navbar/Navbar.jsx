@@ -79,11 +79,11 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <div className="pr-2 flex items-center gap-2">
+            <div className="pr-1 flex items-center">
               {/* Shopping Cart */}
-              <div className="relative">
+              <div className="relative hover:bg-neutral-content p-2 rounded-full">
                 <ShoppingCart className="cursor-pointer" />
-                <p className="absolute -top-1 left-2 text-white bg-red-500 px-1.25  text-[10px] rounded-full">
+                <p className="absolute top-1 left-4 text-white bg-red-500 px-1.25  text-[10px] rounded-full">
                   1
                 </p>
               </div>
