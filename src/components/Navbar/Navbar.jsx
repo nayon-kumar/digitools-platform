@@ -48,7 +48,6 @@ const Navbar = () => {
                 <li>
                   <a>FAQ</a>
                 </li>
-
                 <li>
                   <a className="flex sm:hidden btn rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white">
                     Get Started
@@ -81,7 +80,13 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             <div className="pr-2 flex items-center gap-2">
-              <ShoppingCart className="cursor-pointer" />
+              {/* Shopping Cart */}
+              <div className="relative">
+                <ShoppingCart className="cursor-pointer" />
+                <p className="absolute -top-1 left-2 text-white bg-red-500 px-1.25  text-[10px] rounded-full">
+                  1
+                </p>
+              </div>
               <p className="cursor-pointer hover:bg-neutral-content px-3 py-1 rounded-sm">
                 Login
               </p>
