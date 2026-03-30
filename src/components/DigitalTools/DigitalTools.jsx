@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const DigitalTools = () => {
+  const [selectedBtn, setSelectedBtn] = useState("products");
   return (
     <div>
       <div className="md:max-w-[80%] mx-auto mt-15 px-4">
@@ -15,10 +16,18 @@ const DigitalTools = () => {
           </p>
         </div>
         <div className="text-center mt-5">
-          <button className="btn rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white">
+          <button
+            onClick={() => setSelectedBtn("products")}
+            className={`btn rounded-full ${selectedBtn === "products" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""} `}
+          >
             Products
           </button>
-          <button className="btn rounded-full">Cart (2)</button>
+          <button
+            onClick={() => setSelectedBtn("cart")}
+            className={`btn rounded-full ${selectedBtn === "cart" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""} `}
+          >
+            Cart (2)
+          </button>
         </div>
       </div>
     </div>
