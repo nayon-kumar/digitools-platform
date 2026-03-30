@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 
-const DigitalTools = () => {
+import ToolsCard from "../ToolsCard/ToolsCard";
+
+const DigitalTools = ({ toolsDataPromise }) => {
+  const toolsData = use(toolsDataPromise);
+
   const [selectedBtn, setSelectedBtn] = useState("products");
+
   return (
     <div>
       <div className="md:max-w-[80%] mx-auto mt-15 px-4">
@@ -29,6 +34,13 @@ const DigitalTools = () => {
             >
               Cart (2)
             </button>
+          </div>
+        </div>
+        <div className="mt-10">
+          <div className="grid grid-cols-3 gap-5">
+            {toolsData.map((tool) => (
+              <ToolsCard key={tool.id} tool={tool} />
+            ))}
           </div>
         </div>
       </div>
