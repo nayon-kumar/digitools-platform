@@ -18,7 +18,11 @@ function App() {
       <Banner />
       <Performance />
       <Suspense
-        fallback={<span className="loading loading-spinner loading-xl"></span>}
+        fallback={
+          <div className="flex items-center justify-center mt-10">
+            <span className="loading loading-spinner loading-xl mx-auto"></span>
+          </div>
+        }
       >
         <DigitalTools toolsDataPromise={toolsDataPromise} />
       </Suspense>
