@@ -9,11 +9,9 @@ const ToolsCard = ({ tool }) => {
           {tool.tag}
         </span>
       </div>
-      <img
-        className="h-14 w-14 border-2 border-[#F2F2F2] rounded-full p-2"
-        src={tool.icon}
-        alt={tool.name}
-      />
+      <div className="border-2 border-[#F2F2F2] rounded-full inline-max p-3">
+        <img className="h-7" src={tool.icon} alt={tool.name} />
+      </div>
       <h3
         className="font-bold text-xl mt-4"
         style={{

@@ -4,14 +4,28 @@ import Banner from "./components/Banner/Banner";
 import DigitalTools from "./components/DigitalTools/DigitalTools";
 import Navbar from "./components/Navbar/Navbar";
 import Performance from "./components/Performance/Performance";
+import ThreeStep from "./components/ThreeStep/ThreeStep";
+import Pricing from "./components/Pricing/Pricing";
 
 const fetchToolsData = async () => {
   const res = await fetch("/toolsData.json");
   return res.json();
 };
 
+const fetchThreeStepData = async () => {
+  const res = await fetch("/threeStepData.json");
+  return res.json();
+};
+
+const fetchPricingData = async () => {
+  const res = await fetch("/pricingData.json");
+  return res.json();
+};
+
 function App() {
   const toolsDataPromise = fetchToolsData();
+  const threeStepDataPromise = fetchThreeStepData();
+  const pricingDataPromise = fetchPricingData();
   return (
     <>
       <Navbar />
@@ -25,6 +39,24 @@ function App() {
         }
       >
         <DigitalTools toolsDataPromise={toolsDataPromise} />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center mt-10">
+            <span className="loading loading-spinner loading-xl mx-auto"></span>
+          </div>
+        }
+      >
+        <ThreeStep threeStepDataPromise={threeStepDataPromise} />
+      </Suspense>
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center mt-10">
+            <span className="loading loading-spinner loading-xl mx-auto"></span>
+          </div>
+        }
+      >
+        <Pricing pricingDataPromise={pricingDataPromise} />
       </Suspense>
     </>
   );
