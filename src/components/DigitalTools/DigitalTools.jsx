@@ -64,25 +64,37 @@ const DigitalTools = ({ toolsDataPromise, cart, setCart }) => {
                 <h4 className="text-xl font-bold text-[#101727] mb-6">
                   Your Cart
                 </h4>
-                <div>
-                  {cart.map((singleCart, index) => (
-                    <Cart
-                      key={index}
-                      singleCart={singleCart}
-                      cart={cart}
-                      setCart={setCart}
-                      totalPrice={totalPrice}
-                      setTotalPrice={setTotalPrice}
-                    />
-                  ))}
-                </div>
-                <div className="flex items-center justify-between mt-5">
-                  <p>Total:</p>
-                  <p className="font-bold text-[#101727]">${totalPrice}</p>
-                </div>
-                <button className="btn w-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-full mt-5 ">
-                  Proceed to Checkout
-                </button>
+                {cart.length > 0 ? (
+                  <>
+                    <div>
+                      <div>
+                        {cart.map((singleCart, index) => (
+                          <Cart
+                            key={index}
+                            singleCart={singleCart}
+                            cart={cart}
+                            setCart={setCart}
+                            totalPrice={totalPrice}
+                            setTotalPrice={setTotalPrice}
+                          />
+                        ))}
+                      </div>
+                      <div className="flex items-center justify-between mt-5">
+                        <p>Total:</p>
+                        <p className="font-bold text-[#101727]">
+                          ${totalPrice}
+                        </p>
+                      </div>
+                      <button className="btn w-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-full mt-5 ">
+                        Proceed to Checkout
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div>Empty</div>
+                  </>
+                )}
               </div>
             </div>
           </>
