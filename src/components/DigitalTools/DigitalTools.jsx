@@ -1,11 +1,14 @@
 import React, { use, useState } from "react";
 
 import ToolsCard from "../ToolsCard/ToolsCard";
+import Cart from "../Cart/Cart";
 
 const DigitalTools = ({ toolsDataPromise }) => {
   const toolsData = use(toolsDataPromise);
 
   const [selectedBtn, setSelectedBtn] = useState("products");
+  const [cart, setCart] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   return (
     <div>
@@ -20,6 +23,7 @@ const DigitalTools = ({ toolsDataPromise }) => {
             to boost your productivity and creativity.
           </p>
         </div>
+        {/* Toggle btn */}
         <div className="text-center mt-5 ">
           <div className="border-2 border-gray-200 px-3 py-2 rounded-full inline-block">
             <button
@@ -32,17 +36,58 @@ const DigitalTools = ({ toolsDataPromise }) => {
               onClick={() => setSelectedBtn("cart")}
               className={`btn rounded-full ${selectedBtn === "cart" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""} `}
             >
-              Cart (2)
+              Cart ({cart.length})
             </button>
           </div>
         </div>
-        <div className="mt-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-            {toolsData.map((tool) => (
-              <ToolsCard key={tool.id} tool={tool} />
-            ))}
-          </div>
-        </div>
+        {/* Content */}
+        {selectedBtn === "products" ? (
+          <>
+            <div className="mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                {toolsData.map((tool) => (
+                  <ToolsCard
+                    key={tool.id}
+                    tool={tool}
+                    cart={cart}
+                    setCart={setCart}
+                    totalPrice={totalPrice}
+                    setTotalPrice={setTotalPrice}
+                  />
+                ))}
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="mt-10">
+              <div className="border-2 border-[#F2F2F2] px-4 py-4 rounded-2xl">
+                <h4 className="text-xl font-bold text-[#101727] mb-6">
+                  Your Cart
+                </h4>
+                <div>
+                  {cart.map((singleCart, index) => (
+                    <Cart
+                      key={index}
+                      singleCart={singleCart}
+                      cart={cart}
+                      setCart={setCart}
+                      totalPrice={totalPrice}
+                      setTotalPrice={setTotalPrice}
+                    />
+                  ))}
+                </div>
+                <div className="flex items-center justify-between mt-5">
+                  <p>Total:</p>
+                  <p className="font-bold text-[#101727]">${totalPrice}</p>
+                </div>
+                <button className="btn w-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-full mt-5 ">
+                  Proceed to Checkout
+                </button>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

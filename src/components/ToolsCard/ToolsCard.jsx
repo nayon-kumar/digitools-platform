@@ -1,7 +1,15 @@
 import React from "react";
 import { Check } from "lucide-react";
 
-const ToolsCard = ({ tool }) => {
+const ToolsCard = ({ tool, cart, setCart, totalPrice, setTotalPrice }) => {
+  const handleClick = (item) => {
+    const isExist = cart.find((cartItem) => cartItem.id === item.id);
+    if (!isExist) {
+      setCart([...cart, item]);
+      setTotalPrice(totalPrice + item.price);
+    }
+  };
+
   return (
     <div className="border-2 p-5 border-[#F2F2F2] rounded-2xl shadow-lg hover:shadow-xl hover:scale-103 transition-all duration-300 ease-in-out flex flex-col h-full relative">
       <div className="absolute top-5 right-5">
@@ -49,7 +57,10 @@ const ToolsCard = ({ tool }) => {
         ))}
       </div>
       <div className="mt-auto">
-        <button className="btn w-full rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white py-3 font-medium">
+        <button
+          onClick={() => handleClick(tool)}
+          className="btn w-full rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white py-3 font-medium"
+        >
           Buy Now
         </button>
       </div>
