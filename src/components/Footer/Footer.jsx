@@ -7,41 +7,76 @@ const Footer = () => {
   return (
     <div className="bg-[#101727] text-white">
       <div className="md:max-w-[80%] mx-auto px-4 pt-15">
-        <div className="grid grid-cols-5">
-          <div>
-            <h3>DigiTools</h3>
-            <p>
-              Premium digital tools for creators, professionals, and businesses.
-              Work smarter with our suite of powerful tools.
+        <div className="grid grid-cols-1 sm:grid-col-6 gap-7 md:grid-cols-6 text-center sm:text-left">
+          <div className="sm:col-span-2">
+            <h3 className="text-2xl font-bold mb-4">DigiTools</h3>
+            <p className="opacity-80">
+              Premium digital tools for creators,
+              <br />
+              professionals, and businesses. Work smarter <br />
+              with our suite of powerful tools.
             </p>
           </div>
           <div>
-            <h4>Product</h4>
-            <p>Features</p>
-            <p>Pricing</p>
-            <p>Templates</p>
-            <p>Integrations</p>
+            <h4 className="font-bold mb-4">Product</h4>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Features
+            </p>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Pricing
+            </p>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Templates
+            </p>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Integrations
+            </p>
           </div>
           <div>
-            <h4>Company</h4>
-            <p>About</p>
-            <p>Blog</p>
-            <p>Careers</p>
-            <p>Press</p>
+            <h4 className="font-bold mb-4">Company</h4>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              About
+            </p>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Blog
+            </p>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Careers
+            </p>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Press
+            </p>
           </div>
           <div>
-            <h4>Resources</h4>
-            <p>Documentation</p>
-            <p>Help Center</p>
-            <p>Community</p>
-            <p>Contact</p>
+            <h4 className="font-bold mb-4">Resources</h4>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Documentation
+            </p>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Help Center
+            </p>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Community
+            </p>
+            <p className="opacity-80 cursor-pointer mb-3 hover:opacity-100 transition-all duration-300 ease-in-out">
+              Contact
+            </p>
           </div>
           <div>
-            <h4>Social Links</h4>
-            <div>
-              <FaFacebook />
-              <FaInstagram />
-              <FaXTwitter />
+            <h4 className="font-bold mb-4">Social Links</h4>
+            <div className="flex gap-3 mt-4 items-center justify-center">
+              <FaFacebook
+                size={30}
+                className="cursor-pointer hover:text-[#4F39F6] transition-all duration-300 ease-in-out"
+              />
+              <FaInstagram
+                size={30}
+                className="cursor-pointer hover:text-[#4F39F6] transition-all duration-300 ease-in-out"
+              />
+              <FaXTwitter
+                size={30}
+                className="cursor-pointer hover:text-[#4F39F6] transition-all duration-300 ease-in-out"
+              />
             </div>
           </div>
         </div>
