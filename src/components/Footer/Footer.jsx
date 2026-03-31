@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
           <div>
             <h4 className="font-bold mb-4">Social Links</h4>
-            <div className="flex gap-3 mt-4 items-center justify-center">
+            <div className="flex gap-3 mt-4 items-center justify-center sm:justify-normal">
               <FaFacebook
                 size={30}
                 className="cursor-pointer hover:text-[#4F39F6] transition-all duration-300 ease-in-out"
@@ -78,6 +78,17 @@ const Footer = () => {
                 className="cursor-pointer hover:text-[#4F39F6] transition-all duration-300 ease-in-out"
               />
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="md:max-w-[80%] mx-auto px-4 py-5">
+        <hr className="text-gray-300" />
+        <div className="flex flex-wrap gap-5 items-center justify-center md:justify-between mt-5 text-center">
+          <div>© 2026 Digitools. All rights reserved.</div>
+          <div className="flex flex-wrap items-center justify-center gap-5">
+            <p>Privacy Policy</p>
+            <p>Terms of Service</p>
+            <p>Cookies</p>
           </div>
         </div>
       </div>

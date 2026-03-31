@@ -19,7 +19,7 @@ const WorkFlow = () => {
                 Explore Products
               </p>
             </button>
-            <button className="btn rounded-full text-white bg-transparent shadow-none">
+            <button className="btn rounded-full hover:bg-white hover:text-[#4F39F6] text-white bg-transparent shadow-none">
               View Pricing
             </button>
           </div>
