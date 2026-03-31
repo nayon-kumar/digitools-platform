@@ -83,12 +83,20 @@ const Footer = () => {
       </div>
       <div className="md:max-w-[80%] mx-auto px-4 py-5">
         <hr className="text-gray-300" />
-        <div className="flex flex-wrap gap-5 items-center justify-center md:justify-between mt-5 text-center">
-          <div>© 2026 Digitools. All rights reserved.</div>
+        <div className="flex flex-wrap gap-5 items-center justify-center md:justify-between mt-5 text-center text-white">
+          <div className="opacity-80">
+            © 2026 Digitools. All rights reserved.
+          </div>
           <div className="flex flex-wrap items-center justify-center gap-5">
-            <p>Privacy Policy</p>
-            <p>Terms of Service</p>
-            <p>Cookies</p>
+            <p className="opacity-80 cursor-pointer hover:opacity-100 transition-all duration-300 ease-in-out">
+              Privacy Policy
+            </p>
+            <p className="opacity-80 cursor-pointer hover:opacity-100 transition-all duration-300 ease-in-out">
+              Terms of Service
+            </p>
+            <p className="opacity-80 cursor-pointer hover:opacity-100 transition-all duration-300 ease-in-out">
+              Cookies
+            </p>
           </div>
         </div>
       </div>
