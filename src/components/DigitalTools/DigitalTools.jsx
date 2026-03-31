@@ -3,11 +3,10 @@ import React, { use, useState } from "react";
 import ToolsCard from "../ToolsCard/ToolsCard";
 import Cart from "../Cart/Cart";
 
-const DigitalTools = ({ toolsDataPromise }) => {
+const DigitalTools = ({ toolsDataPromise, cart, setCart }) => {
   const toolsData = use(toolsDataPromise);
 
   const [selectedBtn, setSelectedBtn] = useState("products");
-  const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
   return (

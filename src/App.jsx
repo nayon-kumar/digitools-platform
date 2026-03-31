@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import "./App.css";
 import Banner from "./components/Banner/Banner";
 import DigitalTools from "./components/DigitalTools/DigitalTools";
@@ -28,9 +28,11 @@ function App() {
   const toolsDataPromise = fetchToolsData();
   const threeStepDataPromise = fetchThreeStepData();
   const pricingDataPromise = fetchPricingData();
+
+  const [cart, setCart] = useState([]);
   return (
     <>
-      <Navbar />
+      <Navbar cart={cart} />
       <Banner />
       <Performance />
       <Suspense
@@ -40,7 +42,11 @@ function App() {
           </div>
         }
       >
-        <DigitalTools toolsDataPromise={toolsDataPromise} />
+        <DigitalTools
+          toolsDataPromise={toolsDataPromise}
+          cart={cart}
+          setCart={setCart}
+        />
       </Suspense>
       <Suspense
         fallback={

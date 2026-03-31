@@ -1,7 +1,7 @@
 import React from "react";
 import { ShoppingCart } from "lucide-react";
 
-const Navbar = () => {
+const Navbar = ({ cart }) => {
   return (
     <div>
       <div className="md:max-w-[80%] mx-auto">
@@ -83,9 +83,15 @@ const Navbar = () => {
               {/* Shopping Cart */}
               <div className="relative hover:bg-neutral-content p-2 rounded-full">
                 <ShoppingCart className="cursor-pointer" />
-                <p className="absolute top-1 left-4 text-white bg-red-500 px-1.25  text-[10px] rounded-full">
-                  1
-                </p>
+                {cart.length > 0 ? (
+                  <>
+                    <p className="absolute top-1 left-4 text-white bg-red-500 px-1.25  text-[10px] rounded-full">
+                      {cart.length}
+                    </p>
+                  </>
+                ) : (
+                  <></>
+                )}
               </div>
               <p className="cursor-pointer hover:bg-neutral-content px-3 py-1 rounded-sm">
                 Login
