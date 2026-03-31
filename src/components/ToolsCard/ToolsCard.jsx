@@ -10,6 +10,8 @@ const ToolsCard = ({ tool, cart, setCart, totalPrice, setTotalPrice }) => {
     }
   };
 
+  const isSelected = cart.some((cartItem) => cartItem.id === tool.id);
+
   return (
     <div className="border-2 p-5 border-[#F2F2F2] rounded-2xl shadow-lg hover:shadow-xl hover:scale-103 transition-all duration-300 ease-in-out flex flex-col h-full relative">
       <div className="absolute top-5 right-5">
@@ -59,9 +61,10 @@ const ToolsCard = ({ tool, cart, setCart, totalPrice, setTotalPrice }) => {
       <div className="mt-auto">
         <button
           onClick={() => handleClick(tool)}
-          className="btn w-full rounded-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white py-3 font-medium"
+          disabled={isSelected}
+          className={`btn w-full rounded-full  py-3 font-medium ${isSelected ? "" : "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"}`}
         >
-          Buy Now
+          {isSelected ? "Selected" : "Buy Now"}
         </button>
       </div>
     </div>
