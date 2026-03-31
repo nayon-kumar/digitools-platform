@@ -7,7 +7,7 @@ const PricingCard = ({ pricing }) => {
     >
       {pricing.tag === "Most Popular" ? (
         <>
-          <div className="text-[#BB4D00] bg-[#FEF3C6] rounded-full px-3 py-1.5 left-[20%] absolute -top-4">
+          <div className="text-[#BB4D00] bg-[#FEF3C6] rounded-full px-3 py-1.5 left-1/2 -translate-x-1/2 absolute -top-4">
             <p>Most Popular</p>
           </div>
         </>
