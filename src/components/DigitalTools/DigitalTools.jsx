@@ -1,5 +1,5 @@
 import React, { use, useState } from "react";
-
+import { ShoppingCart } from "lucide-react";
 import ToolsCard from "../ToolsCard/ToolsCard";
 import Cart from "../Cart/Cart";
 
@@ -8,6 +8,11 @@ const DigitalTools = ({ toolsDataPromise, cart, setCart }) => {
 
   const [selectedBtn, setSelectedBtn] = useState("products");
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const deleteAll = () => {
+    setCart([]);
+    setTotalPrice(0);
+  };
 
   return (
     <div>
@@ -85,14 +90,22 @@ const DigitalTools = ({ toolsDataPromise, cart, setCart }) => {
                           ${totalPrice}
                         </p>
                       </div>
-                      <button className="btn w-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-full mt-5 ">
+                      <button
+                        className="btn w-full bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-full mt-5 "
+                        onClick={deleteAll}
+                      >
                         Proceed to Checkout
                       </button>
                     </div>
                   </>
                 ) : (
                   <>
-                    <div>Empty</div>
+                    <div className="flex items-center justify-center">
+                      <ShoppingCart size={100} className="text-gray-300" />
+                    </div>
+                    <p className="text-center mt-4 text-gray-400">
+                      Your cart is empty
+                    </p>
                   </>
                 )}
               </div>
