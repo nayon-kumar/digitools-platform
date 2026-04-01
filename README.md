@@ -7,9 +7,11 @@ A modern **React-based Digital Tools Platform** where users can explore premium 
 ## 🛠️ Technologies Used
 
 - **React.js** – Frontend framework
+- **JavaScript (ES6+)** – Logic & state handling
 - **Tailwind CSS** – Styling
 - **DaisyUI** – UI components
 - **React Toastify** – Notifications
+- **JSON** - For product data
 - **React Icons** – Icons
 
 ## 🚀 Features

@@ -17,7 +17,9 @@ const ToolsCard = ({ tool, cart, setCart, totalPrice, setTotalPrice }) => {
   return (
     <div className="border-2 p-5 border-[#F2F2F2] rounded-2xl shadow-lg hover:shadow-xl hover:scale-103 transition-all duration-300 ease-in-out flex flex-col h-full relative">
       <div className="absolute top-5 right-5">
-        <span className="text-[#BB4D00] bg-[#FEF3C6] px-4 py-1.5 rounded-full">
+        <span
+          className={`px-4 py-1.5 rounded-full ${tool.tag == "Best Seller" ? "text-[#BB4D00] bg-[#FEF3C6]" : tool.tag == "New" ? "text-[#0A883E] bg-[#DBFCE7]" : "text-[#4F39F6] bg-[#E1E7FF]"}`}
+        >
           {tool.tag}
         </span>
       </div>
