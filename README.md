@@ -1,16 +1,22 @@
-# React + Vite
+# DigiTools - Digital Tools Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To show the live demo <a href="https://digitools-platform-gray.vercel.app/">Click Here</a>
 
-Currently, two official plugins are available:
+A modern **React-based Digital Tools Platform** where users can explore premium tools, add them to cart, and simulate checkout with a smooth UI experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Technologies Used
 
-## React Compiler
+- **React.js** – Frontend framework
+- **Tailwind CSS** – Styling
+- **DaisyUI** – UI components
+- **React Toastify** – Notifications
+- **React Icons** – Icons
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Responsive Navbar with cart indicator
+- Product listing with dynamic cards
+- Cart system with total price calculation
+- Toggle between Products & Cart
+- Toast notifications (Add, Remove, Checkout)
+- Fully responsive design

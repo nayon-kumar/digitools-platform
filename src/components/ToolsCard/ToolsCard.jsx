@@ -67,7 +67,7 @@ const ToolsCard = ({ tool, cart, setCart, totalPrice, setTotalPrice }) => {
           disabled={isSelected}
           className={`btn w-full rounded-full  py-3 font-medium ${isSelected ? "" : "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white"}`}
         >
-          {isSelected ? "Selected" : "Buy Now"}
+          {isSelected ? "Added To Cart" : "Buy Now"}
         </button>
       </div>
     </div>
