@@ -8,6 +8,7 @@ import ThreeStep from "./components/ThreeStep/ThreeStep";
 import Pricing from "./components/Pricing/Pricing";
 import WorkFlow from "./components/WorkFlow/WorkFlow";
 import Footer from "./components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 const fetchToolsData = async () => {
   const res = await fetch("/toolsData.json");

@@ -1,7 +1,9 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 const Cart = ({ singleCart, cart, setCart, totalPrice, setTotalPrice }) => {
   const deleteItem = (item) => {
+    toast.success(`${item.name} Deleted!`);
     const filteredCard = cart.filter((single) => single.id !== item.id);
     setCart(filteredCard);
     setTotalPrice(totalPrice - item.price);

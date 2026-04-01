@@ -1,10 +1,12 @@
 import React from "react";
 import { Check } from "lucide-react";
+import { toast } from "react-toastify";
 
 const ToolsCard = ({ tool, cart, setCart, totalPrice, setTotalPrice }) => {
   const handleClick = (item) => {
     const isExist = cart.find((cartItem) => cartItem.id === item.id);
     if (!isExist) {
+      toast.success(`${item.name} Added!`);
       setCart([...cart, item]);
       setTotalPrice(totalPrice + item.price);
     }

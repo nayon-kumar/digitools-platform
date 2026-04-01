@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import ToolsCard from "../ToolsCard/ToolsCard";
 import Cart from "../Cart/Cart";
+import { toast } from "react-toastify";
 
 const DigitalTools = ({ toolsDataPromise, cart, setCart }) => {
   const toolsData = use(toolsDataPromise);
@@ -10,6 +11,7 @@ const DigitalTools = ({ toolsDataPromise, cart, setCart }) => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   const deleteAll = () => {
+    toast.success("Checkout Successfully!");
     setCart([]);
     setTotalPrice(0);
   };
