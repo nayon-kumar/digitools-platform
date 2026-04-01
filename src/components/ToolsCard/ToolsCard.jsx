@@ -52,7 +52,7 @@ const ToolsCard = ({ tool, cart, setCart, totalPrice, setTotalPrice }) => {
 
       <p className="mb-4">
         <span className="font-bold text-xl">${tool.price}</span>
-        <span className="text-[#627382]">/{tool.period}</span>
+        <span className="text-[#627382] capitalize">/{tool.period}</span>
       </p>
       <div className="flex-1 mb-6">
         {tool.features.map((feature, index) => (

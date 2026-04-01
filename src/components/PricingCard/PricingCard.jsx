@@ -25,7 +25,7 @@ const PricingCard = ({ pricing }) => {
       <p className="mb-4">
         <span className="font-bold text-xl">${pricing.price}</span>
         <span
-          className={`${pricing.tag === "Most Popular" ? "text-white" : "text-[#627382]"}`}
+          className={`capitalize ${pricing.tag === "Most Popular" ? "text-white" : "text-[#627382]"}`}
         >
           /{pricing.period}
         </span>
