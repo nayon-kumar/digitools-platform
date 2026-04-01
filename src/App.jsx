@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import "./App.css";
 import Banner from "./components/Banner/Banner";
 import DigitalTools from "./components/DigitalTools/DigitalTools";
@@ -25,9 +25,9 @@ const fetchPricingData = async () => {
 };
 
 function App() {
-  const toolsDataPromise = fetchToolsData();
-  const threeStepDataPromise = fetchThreeStepData();
-  const pricingDataPromise = fetchPricingData();
+  const toolsDataPromise = useMemo(() => fetchToolsData(), []);
+  const threeStepDataPromise = useMemo(() => fetchThreeStepData(), []);
+  const pricingDataPromise = useMemo(() => fetchPricingData(), []);
 
   const [cart, setCart] = useState([]);
   return (

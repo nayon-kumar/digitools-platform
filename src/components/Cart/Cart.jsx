@@ -8,8 +8,8 @@ const Cart = ({ singleCart, cart, setCart, totalPrice, setTotalPrice }) => {
   };
 
   return (
-    <div className="bg-[#F9FAFC] flex items-center justify-between mb-4 p-5 rounded-2xl">
-      <div className="flex gap-5 items-center">
+    <div className="bg-[#F9FAFC] flex gap-3 items-center justify-between mb-4 p-5 rounded-2xl">
+      <div className="flex flex-wrap gap-5 items-center">
         <div className="border-2 p-3 rounded-full bg-white border-[#F2F2F2]">
           <img src={singleCart.icon} alt={singleCart.name} />
         </div>
