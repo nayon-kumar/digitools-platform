@@ -68,6 +68,8 @@ function App() {
       </Suspense>
       <WorkFlow />
       <Footer />
+      {/* React toastify */}
+      <ToastContainer />
     </>
   );
 }
