@@ -5,7 +5,7 @@ import playImg from "../../assets/Play.png";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="mt-25">
       <div className="md:max-w-[80%] mx-auto mt-10 px-4">
         <div className="flex flex-col-reverse md:flex-row gap-5 items-center justify-center md:justify-between">
           <div className="md:flex-1 text-center md:text-left">

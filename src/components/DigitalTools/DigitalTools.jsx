@@ -30,17 +30,17 @@ const DigitalTools = ({ toolsDataPromise, cart, setCart }) => {
           </p>
         </div>
         {/* Toggle btn */}
-        <div className="text-center mt-5 ">
+        <div className="text-center mt-5 sticky top-16 bg-white z-20 py-5">
           <div className="border-2 border-gray-200 px-3 py-2 rounded-full inline-block">
             <button
               onClick={() => setSelectedBtn("products")}
-              className={`btn rounded-full ${selectedBtn === "products" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""} `}
+              className={`btn md:px-10 rounded-full ${selectedBtn === "products" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""} `}
             >
               Products
             </button>
             <button
               onClick={() => setSelectedBtn("cart")}
-              className={`btn rounded-full ${selectedBtn === "cart" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""} `}
+              className={`btn md:px-10 rounded-full ${selectedBtn === "cart" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white" : ""} `}
             >
               Cart ({cart.length})
             </button>
